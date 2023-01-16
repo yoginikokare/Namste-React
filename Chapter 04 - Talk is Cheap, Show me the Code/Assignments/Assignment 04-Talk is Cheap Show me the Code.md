@@ -22,7 +22,8 @@ Reconciliaion is process where we have diff algorithm which finds out diff betwe
 
 Q. Why we need keys in React? when do we need key in React?
 
-- keys are used to uniquly idenify element when we have multiple element of same type under one root. keys make reconciliation process faster.
+- keys are used to uniquly idenify element when we have multiple children with same html tag under one root. 
+- keys make reconciliation process faster.
   Ex. suppose we have list component which contain 4 div and one more div gets added on top of the list then react will get confuse which div gets added and at which place in the list. he does not able to idenify newly added div so instaed of only rendering newly added div it will re-render whole list.
 - so if we give unique keys to all div then diff algo will uniquley identify which div newly introduced and which are existing and it will quickly render only that div with minimal effort.
 
