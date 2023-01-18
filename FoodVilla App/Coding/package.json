@@ -1,0 +1,33 @@
+{
+  "name": "namaste-react-course",
+  "version": "1.0.0",
+  "description": "React course",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoginikokare/Namste-React.git"
+  },
+  "author": "yogini kokare",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yoginikokare/Namste-React/issues"
+  },
+  "homepage": "https://github.com/yoginikokare/Namste-React#readme",
+  "browserslist": [
+    "last 10 Chrome versions"
+  ],
+  "devDependencies": {
+    "parcel": "^2.8.2",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "@babel/core": "^7.20.12",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
