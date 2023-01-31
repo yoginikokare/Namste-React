@@ -28,8 +28,9 @@
     flex-wrap: wrap;
 }
 
-.restaurant-card {
-    width: 200px;
+.restaurant-card,
+.shimmer {
+    width: 190px;
     border: 1px solid #000;
     margin: 5px;
     padding: 10px;
@@ -39,8 +40,19 @@
     width: 100%;
 }
 
+.shimmer > img {
+    width: 100%;
+    height: 100px;
+    background-color: gray;
+}
 
-.search-container{
+.shimmer > h1, .shimmer > h2, .shimmer > h3 {
+    width: 100%;
+    height: 20px;
+    background-color: gray;
+}
+
+.search-container {
     margin: 15px 4px;
 }
 

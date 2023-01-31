@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Restaurant from "./Restaurant";
+import Shimmer from "./Shimmer";
 import { restaurantList } from "../../constants";
 
 function filterData(searchText, restaurantData) {
@@ -13,9 +14,34 @@ function filterData(searchText, restaurantData) {
 }
 
 const Body = () => {
-  const [searchText, setSearchText] = useState("king");
-  const [allRestaurant, setRestaurantList]= useState(restaurantList);
-  const [filteredRestaurant, setFilterdRestaurant] = useState(restaurantList);
+  const [searchText, setSearchText] = useState("");
+  const [allRestaurant, setRestaurantList]= useState([]);
+  const [filteredRestaurant, setFilterdRestaurant] = useState([]);
+  
+  useEffect(()=>{
+    getRestaurant();
+  }, []);
+
+  async function getRestaurant() {
+    //due to cors error commeting this api call but its work with cors chrome extenstion
+    //const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0138356&lng=73.1013971&page_type=DESKTOP_WEB_LISTING');
+    setTimeout(() => {
+      const restaurant = restaurantList;//await data.json();
+      setRestaurantList(restaurant);
+      setFilterdRestaurant(restaurant);
+      console.log(restaurant);
+    }, 1000);  
+  }
+
+  console.log("render()");
+
+  //Conditional Rendering
+  //If restaurant is thr => then load actual UI
+  //If resturant is not thr => load shimmer  
+  if(allRestaurant.length === 0) {
+    return (<Shimmer/>);
+  }
+
   return (
     <div className="body">
       <div className="search-container">
@@ -31,10 +57,12 @@ const Body = () => {
       </div>
       <h1>{searchText}</h1>
       <div className="resaturant-list">
-        {
+        { 
+          filteredRestaurant.length === 0 ?  (<h1>No Filter Record Found</h1>) : 
           filteredRestaurant.map((restaurant) => (
             <Restaurant {...restaurant.data} key={restaurant.data.id} />
-          ))}
+          ))
+        }
       </div>
     </div>
   );
