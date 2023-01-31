@@ -16,9 +16,10 @@ Q: what is virtual dom? Why we need virtual dom in react?
 - It is an represetaion of actul dom. it store in form of object in browser memory. whenever a state changes in run time then corresponding node and its children in virtual dom gets rerendred.
 - when anything changes, virtul dom gets upadted instead of real dom. like real dom it also represented in tree structure.
 - we need it for reconciliation process
+- It is big js object at the end and diff algo compares 2 object (current and updated) and replace
 
 Q. What is Recociliation in React?
-Reconciliaion is process where we have diff algorithm which finds out diff between the one tree and another tree and rerender or change only specific portion of tree(dom) which found by diff algo instead of rerendering of whole dom
+Reconciliaion is process where we have diff algorithm which finds out diff between the one tree(current) and another tree(updated one) and rerender or change only specific portion of tree(dom) which found by diff algo instead of rerendering of whole dom
 
 Q. Why we need keys in React? when do we need key in React?
 
@@ -36,8 +37,11 @@ Yes, we can use the index as keys, but it is not considered as a good practice. 
 Q. what is Config Driven UI?
 
 - It is an system design concept.
+- means config or configuration data i.e a big json object is send from backend.
+- for building ui we need config data it either come from backend or we can hardcode it in frontend side also
 - the UI which is created from config are called config driven UI. if config change then similrly our UI should also change. this config driven by backend that means everything handle by backend (api).
   Example: I have food app and we have show diff offers in diff cities.then instaed of keeping diff site for every city we use CD UI that means on the basis of api data we show diff offer in diff cities.
+  2. diff popup messages which u build in uber project
 
 Q: What is prop in react?
 means passing some data as agrument into functional component. In react every component at the end is function. so passing prop in component menas passing data as agrument is prop in react and we recive it into a function parameter
