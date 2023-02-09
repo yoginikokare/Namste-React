@@ -24,9 +24,9 @@ const RestaurantMenu = () => {
   }
 
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
-      <div>
-        <h1>Restaurant Id: {restaurantMenu.id}</h1>
+    <div style={{ display: "flex", padding: "10px"}}>
+      <div className="px-5">
+        <h1 className="p-5 text-xl font-bold">Restaurant Id: {restaurantMenu.id}</h1>
         <img src={IMG_CDN_URL + restaurantMenu.cloudinaryImageId}></img>
         <h2>{restaurantMenu.name}</h2>
         <h3>{restaurantMenu.city}</h3>

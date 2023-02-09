@@ -8,11 +8,11 @@ const Restaurant = ({
 }) => {
   //console.log(props);
   return (
-    <div className="restaurant-card">
-      <img src={IMG_CDN_URL + cloudinaryImageId}></img>
-      <h2>{name}</h2>
-      <h3>{lastMileTravelString} minutes</h3>
-      {<h4>{cuisines.join(", ")}</h4>}
+    <div className="w-[200] h-[250] m-2 p-2 bg-pink-100">
+      <img className="max-w-full" src={IMG_CDN_URL + cloudinaryImageId}></img>
+      <h2 className="text-sm font-bold">{name}</h2>
+      <h3 className="text-sm">{lastMileTravelString} minutes</h3>
+      <h4 className="text-sm">{cuisines.join(", ")}</h4>
     </div>
   );
 };

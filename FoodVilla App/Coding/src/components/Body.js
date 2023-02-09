@@ -30,8 +30,8 @@ const Body = () => {
     //const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0138356&lng=73.1013971&page_type=DESKTOP_WEB_LISTING');
     setTimeout(() => {
       const restaurant = restaurantList;//await data.json();
-      setRestaurantList(restaurant);
-      setFilterdRestaurant(restaurant);
+      setRestaurantList(restaurant?.data?.cards[2]?.data?.data?.cards);
+      setFilterdRestaurant(restaurant?.data?.cards[2]?.data?.data?.cards);
       console.log(restaurant);
     }, 1000);  
   }
@@ -47,11 +47,11 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="search-container">
+      <div className="bg-blue-200 p-2">
         <input type="text" className="search-input" value={searchText} onChange={(e)=> {
           setSearchText(e.target.value);
         }}/>
-        <button type="button" className="search-btn" onClick={()=>{
+        <button type="button" className="bg-red-100 px-2" onClick={()=>{
           const data = filterData(searchText, allRestaurant);
           setFilterdRestaurant(data);
         }}>
@@ -59,7 +59,7 @@ const Body = () => {
         </button>
       </div>
       <h1>{searchText}</h1>
-      <div className="resaturant-list">
+      <div className="flex flex-wrap item-stretch">
         { 
           filteredRestaurant.length === 0 ?  (<h1>No Filter Record Found</h1>) : 
           filteredRestaurant.map((restaurant) => (

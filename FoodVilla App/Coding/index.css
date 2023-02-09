@@ -1,4 +1,9 @@
-#container {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* #container {
     background-color: red;;
 }
 
@@ -58,4 +63,4 @@
 
 .search-btn {
     margin-left: 5px;
-}
+} */
