@@ -70,15 +70,16 @@ thr can be 2 way to load the page
 
 second approch is best and used lots in used in react. it feel user eye better
 
-useEffect: it a just normal js function and we call it by passing another callback function into it and dependency array
-useEffect(()=>{});
+How will useEffect behave if we don't add a dependency array?
+
+useEffect: it a just normal js function and we call it by passing another callback function into it and dependency array. this hook gets called after rendering of comp and we use it to make api call or to do task which want to do after render like settimeout..syntax- useEffect(()=>{});
 it calls in 3 ways:
-useEffect(()=>{}) - when no dependency array, useEffect will called after every re-
+1. useEffect(()=>{}) - when no dependency array, useEffect will called after every re-
 render
 
-useEffect(()=>{}, []) - when empty dependency array, it called only once after initialization of component i.e initial render
+2. useEffect(()=>{}, []) - when empty dependency array, it called only once after initialization of component i.e initial render
 
-useEffect(()=>{}, []) - when dependency array with state variable, useEffect will called every after initial rendering of component and state variable define in dependency array changes
+3. useEffect(()=>{}, [searchText]) - when dependency array with state variable, useEffect will called every after initial rendering of component and state variable define in dependency array changes
 
 fetch() method: this method used to request data from server. it return promise whether it is resolve or not and data in form of json or xml. by default its get request
 fetch(url, options).then(response => response.json());

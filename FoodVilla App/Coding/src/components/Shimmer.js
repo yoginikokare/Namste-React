@@ -1,10 +1,10 @@
 const Shimmer = () => {
     return (
-        <div class="resaturant-list">
+        <div className="resaturant-list">
             {
-                Array(10).fill(null).map((e)=> {
+                Array(10).fill(null).map((e, index)=> {
                     return (
-                        <div className="shimmer">
+                        <div className="shimmer" key={index}>
                             <img></img>
                             <h2></h2>
                             <h3></h3>

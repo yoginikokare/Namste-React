@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Restaurant from "./Restaurant";
 import Shimmer from "./Shimmer";
 import { restaurantList } from "../../constants";
+import { Link } from "react-router-dom";
 
 function filterData(searchText, restaurantData) {
   if(searchText=="") {
@@ -17,6 +18,8 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [allRestaurant, setRestaurantList]= useState([]);
   const [filteredRestaurant, setFilterdRestaurant] = useState([]);
+
+  console.log(useState());
   
   useEffect(()=>{
     getRestaurant();
@@ -60,8 +63,8 @@ const Body = () => {
         { 
           filteredRestaurant.length === 0 ?  (<h1>No Filter Record Found</h1>) : 
           filteredRestaurant.map((restaurant) => (
-            <Restaurant {...restaurant.data} key={restaurant.data.id} />
-          ))
+            <Link to={'/restaurant/' + restaurant.data.id} key={restaurant.data.id}><Restaurant {...restaurant.data}/></Link>
+        ))
         }
       </div>
     </div>
