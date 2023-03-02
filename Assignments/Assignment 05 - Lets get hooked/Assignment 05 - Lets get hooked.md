@@ -29,7 +29,11 @@ Q:what is state in react?
 in react every component maintain a its state. we use useState hook to create local state variable and react keeps track of state variable. state variable store the data used in component and whenever state variable change whole component get re-render and updated data get display on UI that means keep your ui in sync with updated data we use state variable
 
 Q:What are react Hooks?
-React hooks are at the end is just normal javascript function but it used to perform some special react features like useState,useEffects. we get that hooks from react lib.explain these hooks in detail. Hooks don’t work inside classes.
+React hooks are at the end is just normal javascript function but it used to perform some special react features like useState,useEffects.
+Hooks are JavaScript functions that manage the state's behaviour and side effects by isolating them from a component.
+React Hooks are new addition to React from React 16.8 version. Earlier, state and other component features could be handled only using Class Components. But with version 16.8, React introduced a new pattern called Hooks. With React Hooks, we can use state, and other React features, in a functional component empowering functional programming in React.
+
+React provides a bunch of standard in-built hooks like useState(), useEffect(), usecontext(), useReducer(), usecallback, useMemo(), useRef(), useLayoutEffect(), useDebugValue() and other additional hooks.
 
 Q:Why do we need useState hook?
 it is a hook that react gives us to create local state variable inside your functional component. and to keep your ui in sync with updated data we use state variable. also react keep track of only those variable.

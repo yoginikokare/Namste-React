@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { IMG_CDN_URL, ResMenu } from "../../constants";
+import { IMG_CDN_URL, RESTAURANT_MENU_API, ResMenu } from "../../constants";
 
 const RestaurantMenu = () => {
   const params = useParams();
@@ -8,11 +8,11 @@ const RestaurantMenu = () => {
   console.log(params);
 
   async function getRestaurantDetails() {
-    //const data = await fetch("https://www.swiggy.com/dapi/menu/v4/full?lat=19.0138356&lng=73.1013971&menuId=359507", {credentials: "include"});
-    //const resMenu = await data.json();
-    setTimeout(() => {
-      setRestaurantMenu(ResMenu.data);
-    }, 100);
+    const data = await fetch(RESTAURANT_MENU_API);
+    const json = await data.json();
+    //setTimeout(() => {
+      setRestaurantMenu(json.data);
+   // }, 100);
   }
 
   useEffect(() => {

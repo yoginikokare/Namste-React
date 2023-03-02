@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Restaurant from "./Restaurant";
 import Shimmer from "./Shimmer";
-import { restaurantList } from "../../constants";
+import { RESTAURANT_lIST_API, RESTAURANT_LIST } from "../../constants";
 import { Link } from "react-router-dom";
 
 function filterData(searchText, restaurantData) {
@@ -27,13 +27,14 @@ const Body = () => {
 
   async function getRestaurant() {
     //due to cors error commeting this api call but its work with cors chrome extenstion
-    //const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0138356&lng=73.1013971&page_type=DESKTOP_WEB_LISTING');
-    setTimeout(() => {
-      const restaurant = restaurantList;//await data.json();
+    const data = await fetch(RESTAURANT_lIST_API);
+    //setTimeout(() => {
+      const restaurant = await data.json();
+     // const restaurant = RESTAURANT_LIST;
       setRestaurantList(restaurant?.data?.cards[2]?.data?.data?.cards);
       setFilterdRestaurant(restaurant?.data?.cards[2]?.data?.data?.cards);
       console.log(restaurant);
-    }, 1000);  
+    //}, 1000);  
   }
 
   console.log("render()");

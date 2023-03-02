@@ -94,6 +94,21 @@ what is useParms: it is hook used to read the dynamic url params. whatever we pu
 ex. {path:'/retaurent/:resId'} 
     console.log(useParms())  // { resId: 12343 }
 
+Nested Routes:
+U cannot create child path using '/' under parent routes.
+all child path sould be relative path to its parent.
+if u do `profile/` then error will be  thrown in console`Error: Absolute route path "/profile" nested under path "/about" is not valid.`
+      {
+        path: '/about',
+        element: <About/>,
+        children: [
+          {
+            path: 'profile',  //this relative path is valid
+            element: <Profile/>
+          }
+        ]
+      },
+
 Assignments:
 1. What are various ways to add images into our App? Explain with code examples.
    1. use link- store image in awsstorage or cloudanary storage server nd use CDN link
