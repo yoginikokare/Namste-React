@@ -4,8 +4,8 @@
 
 `Why?` Like why we create fun in js - to write small logic and wrap up inside fun which we can reuse it later so hooks are also js function and purpose of creating hooks is same
 
-The main reason for which you should be using Custom hooks is to maintain the concept of DRY(Don’t Repeat Yourself) in your React apps. For example, suppose you have some logic that makes use of some built-in hooks and you need to use the logic in multiple functional components. So, there are two ways left for you — 1) write the same logic in each and every component (which violates the concept of DRY) and 2) create a separate function that wraps the logic inside it and then call it from those components. The second option is undoubtedly a better choice as you have to write the logic only once.
-benifits:
+The main reason for which you should be using Custom hooks is to maintain the concept of `DRY(Don’t Repeat Yourself)` in your React apps. For example, suppose you have some logic that makes use of some built-in hooks and you need to use the logic in multiple functional components. So, there are two ways left for you — 1) write the same logic in each and every component (which violates the concept of DRY) and 2) create a separate function that wraps the logic inside it and then call it from those components. The second option is undoubtedly a better choice as you have to write the logic only once.
+##### benifits:
     Reusability- hooks are reusable 
     Readability - easy to read
     Maintainable - easy to test
@@ -22,9 +22,9 @@ to do one job So what logic we can extract from this component which get reused 
 Whenever create customhook - creare new file - create hook with ` use` keyword before hook name
 Inside custom hook we can write  => state & useEffect and async API call code
 
-Create useReasturant hook - fetch the data for use and send us
+`Create useReasturant hook` - fetch the data for use and send us
 
-Why we dont create function component or normal function instead of hooks?
+#### Why we dont create function component or normal function instead of hooks?
 Fun compo- FC always return some jsx. it does not return any value.
 Normal Function- state var does not work with normal function
 But hooks - return some value and work with state variables. 
@@ -33,14 +33,13 @@ so whenever your component does need to know about how u r finding data or doing
 
 ### Lazy Loading:
 
-what is main core job of bundler -> bundle your multiple file code into one single file
-how many js file created by bundler without lazy load -> only 1 js file `index.js` file
+`what is main core job of bundler` -> bundle your multiple file code into one single file
+`how many js file created by bundler without lazy load` -> only 1 js file `index.js` file
 index.js -> hold all component, hooks etc js code
 
-Why Lazy Loading?
+`Why Lazy Loading?`
 suppose in large scale app there are 100's of component and your bundler take all that code and bundle it into one single index.js file then what will happend ? it will increase file size and your app load slow and app will not performant. so create one index.js file is not good idea
-
-solution : is to break down your bundle into small chunks
+`solution `: is to break down your bundle into small chunks
 all are same concept just name is diff
 //Do Chunking
 //Lazy Loading
@@ -49,15 +48,15 @@ all are same concept just name is diff
 //dynamic import
 
 
-Is bundling good or bad? Good. But you cannot bundle everything into only one. so when u think ur app size is huge then do chunking based on ur use cases.
+`Is bundling good or bad?` Good. But you cannot bundle everything into only one. so when u think ur app size is huge then do chunking based on ur use cases.
 
-What happend when u do lazy load of component or you do on demand loading?
+##### What happend when u do lazy load of component or you do on demand loading?
 it happens in routing. When you load component data (ex. Instamart component) using lazy 
 ```const About = React.lazy(() => import('./Instamart'));
 ```
 so when u do inital app load, the index.js does not contain Instamart comp code. It contain only home comp code. when we do click on Instamart then one more file (instamart.js) gets loaded into network tab which contain all Instamart comp code.
 
-#### Suspens Component: 
+#### Suspense Component: 
 
 When you are loading components on demand I.e When you do lazy load for component then that time it's bundle js file take some time to load but meanwhile react tries to load component which code is not even thr so in that case react tries to suspend component loading ad throws routing error.
 To handle this case we use suspense component. we load component by wrapping into <suspense ></suspense >
@@ -74,8 +73,8 @@ OR
 </suspense >)
 ```
 
-Never ever dynamically load component inside another component. Not load using lazy load bcz this will lazy load after every render.. 
-Do lazy loading on top of component whr u do import for other dependencies.
+- Never ever dynamically load component inside another component. Not load using lazy load bcz this will lazy load after every render.. 
+- Do lazy loading on top of component whr u do import for other dependencies.
 
 
 ## Assignment:
