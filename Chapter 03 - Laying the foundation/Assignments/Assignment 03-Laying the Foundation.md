@@ -46,7 +46,7 @@ const heading = "<h1 class="header">Header</h1>"  //html element
 
 Superpowers of JSX
 1.Embedding Expressions in JSX - const element = <h1>Hello, {name}</h1>;
-2.Prevents Injection Attacks - 
+2.Prevents xxs scripting Attacks - cross site scripting attacks
 By default, React DOM escapes any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that’s not explicitly written in your application. Everything is converted to a string before being rendered. This helps prevent cross scripting attacks.
 3.You can also use the self-closing form of the tag if there are no children.
 <div className="sidebar" />
@@ -64,7 +64,7 @@ text/babel : This value indicates that the script is a babel type and required b
 text/typescript: As the name suggest the script is written in TypeScript.
 
 
-{TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent><TitleComponent/>} in JSX.
+{titleComponent} vs {<TitleComponent/>} vs {<TitleComponent><TitleComponent/>} in JSX.
 {TitleComponent}: renders a react element.
 {<TitleComponent/>}: renders a react function component.
 {<TitleComponent><TitleComponent/>}: it's a function components and inside we can have another componets. 
