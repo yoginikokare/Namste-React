@@ -1,16 +1,17 @@
 what is babel? why we need it?
 babel is just a js library you can consider as black box which take code and gives you another code. 
-babel is javascript compiler which translate your modern js code(ES6) code into a code which is compatible with older version of browser. 
+babel is javascript compiler which read your code line by line and coverts into a code which browser understand
+it translate your modern js code(ES6) code into a code which is compatible with older version of browser. 
 we need babel beacuse some older version of browser does not support new fatures like new operater (??), new syntax(map function), new variable type (let, const) due to that our application breaks on older browser
 JSX internally uses babel to convert jsx element to react element
 
 What is tree shaking
 tree shaking means Removing unwanted code
 In production builds, Parcel find out the imported and exported functions, constant from each module or from external libraries, and removes everything that isn't used. This is called "tree shaking" or "dead code elimination".
-ex. if our app using external lib which have 10 helper fun but we are using only 2 then parcel ignore all unused code
+ex. if our app using external lib which have 10 helper fun but we are using only 2 then parcel only keep those function in build and ignore all unwanted function
 
 why we need key in react ? reconcilation
-react keeps track of key by using keys it uniqley indetig element
+react keeps track of key by using keys. it uniqly indetify element
 
 suppose I have ul like this and have added one more li on the top then react does not get easily get to know that which li is gets added and which place. it has to put lot many efforts and it will re-rendered whole dom so it will affect on app performance but if we add unique key to each li then react will easiliy identify newly added li with minimal efforts and only inject that liin dom instaed of rendering whole dom
 <ul>
@@ -33,6 +34,8 @@ bcz suppose we have big html structure or template and by using react.createElem
 
 how: JSX => React.creatElement ===> object ===> HTML(Dom)
 Babel convert your jsx code to react.createelemnt and then react elemet gives us a object which itself then converted to html tag and render on to dom
+
+reactDom() root.render() method render react element object as html into dom
 
 diff between html and jsx -
 
