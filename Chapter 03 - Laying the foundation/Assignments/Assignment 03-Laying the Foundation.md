@@ -49,8 +49,9 @@ Superpowers of JSX
 2.Prevents xxs scripting Attacks - cross site scripting attacks
 By default, React DOM escapes any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that’s not explicitly written in your application. Everything is converted to a string before being rendered. This helps prevent cross scripting attacks.
 3.You can also use the self-closing form of the tag if there are no children.
-<div className="sidebar" />
-4.Error messages will often point you in the right direction to fixing your markup.
+<div className="sidebar"  />
+4.Attributes in JSX : We can pass all the html attributes inside jsx tag (attributes must be CamelCased). Even, custom attributes can be created, but it must not use CamelCase.
+5.Props in JSX : The values of each attribute can be passed as properties (props) to a react element. This is my favourite superpower of jsx, since it can handle dynamic data to create react elements.
 
 Role of type attribute in script tag? What options can I use there?
 A: The type attribute specifies the type of the script. The type attribute identifies the content between the <script> and </script> tags. It has a Default value which is “text/javascript”.
