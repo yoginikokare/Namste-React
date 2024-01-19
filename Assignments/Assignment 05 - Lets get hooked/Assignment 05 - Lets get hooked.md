@@ -42,8 +42,9 @@ this hook trigger reconciliation behind the scene so whenever state variable upd
 Notes:
 what happend behind the scene of use state?
 React support one way data bnding, so if we create local var then react does not get to know how to update that variable value on UI thr are may be thousands of varaible. to do that react uses hook that is useState which create local state variable and to keep your ui to sync with updated data we use state var. also react keeps track of only those variable so whenever value of state variable gets updated react will re-render (destroy old component and create new comp) whole component.
-this means behind the scene every time whenever state variable changes your virtul dom gets updated and in reconcilation process diff algo finds diff between current virtul dom and updated virtual dom (btn 2 trees) and quickly replace only that chanded value in actual dom
+this means behind the scene every time whenever state variable changes it trigger reconcilation process and component get re- render with updated virtula dom then diff algo finds out diff between current virtul dom and updated virtual dom (btn 2 trees) and quickly replace only that changed node ( node ) in actual dom
 ex. const a = 10, later it changes to a = 20, recocliation trigger, react re-render the comp and create new virtual dom with upadted node value then diff algo find the difference and replace that value in actual dom
+
 
 why react is so fast:
 react is fast for his faster dom manipualation which is very expensive process on ui and dom manipulation is fast bcz of superpower of diff algoritham. it has virtual dom, reconciliation.also only react lib doesnt make your application fast there are other dependencies also which male your appplication fast. here explain bundler parcel babel, image optimization, minification etc
