@@ -16,7 +16,7 @@ Q: what is virtual dom? Why we need virtual dom in react?
 - It is an represetaion of actul dom. it store in form of object in browser memory. whenever a state changes in run time then corresponding node and its children in virtual dom gets rerendred.
 - when anything changes, virtul dom gets upadted instead of real dom. like real dom it also represented in tree structure.
 - we need it for reconciliation process
-- It is big js object at the end and diff algo compares 2 object (current and updated) and replace
+- It is big js object at the end ..and diff algo compares 2 object (current and updated) and replace
 
 Q. What is Recociliation in React?
 Reconciliaion is process where we have diff algorithm which finds out diff between the one tree(current) and another tree(updated one) and rerender or change only specific portion of tree(dom) which found by diff algo instead of rerendering of whole dom
