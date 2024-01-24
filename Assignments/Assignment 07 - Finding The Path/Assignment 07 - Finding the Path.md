@@ -20,6 +20,9 @@ u can do composition (nexting comp -calling comp inside another)
     </>)
   }
 
+  what is best place to store images and why ? locally in asset folder or in CDN like cloudinary
+  best place to store images is cdn bcz it do image optimization, it reduce file size, it compress image, it caches img,  it load img faster on browser..thr lot of things cdn do for faster rendering of img 
+
 Routing:
 react-router-dom - developed by remix developer."react-router-dom" its a routing lib which help us to perform routing in our app
 
